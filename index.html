@@ -413,7 +413,7 @@
         position: fixed;
         top: 0;
         right: -100%;
-        width: min(320px, 88vw);
+        width: min(320px, 65vw);
         height: 100vh;
         background: var(--green);
         display: flex;
@@ -836,11 +836,18 @@
         cursor: pointer;
         transition: var(--t);
       }
+      .tab i {
+  font-size: 0.9rem;
+  color: var(--coral);
+}
+.tab.active i {
+  color: var(--coral2);
+}
       .tab:hover,
       .tab.active {
         background: var(--green);
         border-color: var(--green);
-        color: var(--white);
+        color: var(--coral2);
       }
       .pkg-grid {
         display: grid;
@@ -968,6 +975,10 @@
         margin-bottom: 10px;
         flex-wrap: wrap;
       }
+      .pkg-meta i {
+  font-size: 0.8rem;
+  color: var(--coral); /* theme accent 🔥 */
+}
       .pkg-meta span {
         font-size: 0.76rem;
         color: var(--grey);
@@ -1933,6 +1944,10 @@
           height: 44px;
           font-size: 1.1rem;
         }
+        .fab i {
+  /* font-size: 1.2rem; */
+  color: white;
+}
       }
     </style>
   </head>
@@ -2024,7 +2039,7 @@
     <!-- <div class="qsearch">
   <div class="qs-box reveal">
     <div class="qs-field">
-      <span class="qs-icon">📍</span>
+      <span class="qs-icon"><i class="fa-solid fa-location-dot"></i></span>
       <div>
         <label class="qs-label">Destination</label>
         <input class="qs-input" type="text" placeholder="Where do you want to go?"/>
@@ -2040,7 +2055,7 @@
     </div>
     <div class="qs-div"></div>
     <div class="qs-field">
-      <span class="qs-icon">👥</span>
+      <span class="qs-icon"><i class="fa-solid fa-user-group"></i></span>
       <div>
         <label class="qs-label">Travelers</label>
         <select class="qs-input"><option>1 Person</option><option>2 People</option><option>3–5 People</option><option>6+ People</option></select>
@@ -2064,10 +2079,13 @@
         </div>
         <div class="pkg-tabs reveal">
           <button class="tab active" data-cat="all">All Destinations</button>
-          <button class="tab" data-cat="beach">🏖 Beach</button>
-          <button class="tab" data-cat="mountain">🏔 Mountain</button>
-          <button class="tab" data-cat="city">🏙 City</button>
-          <button class="tab" data-cat="adventure">🧗 Adventure</button>
+          <button class="tab" data-cat="beach"><i class="fa-solid fa-umbrella-beach"></i> Beach</button>
+          <button class="tab" data-cat="mountain">  <i class="fa-solid fa-mountain"></i> Mountain
+</button>
+          <button class="tab" data-cat="city">  <i class="fa-solid fa-city"></i> City
+</button>
+          <button class="tab" data-cat="adventure">  <i class="fa-solid fa-person-hiking"></i> Adventure
+</button>
         </div>
         <div class="pkg-grid" id="pkgGrid">
           <div class="pkg-card reveal" data-cat="beach">
@@ -2084,11 +2102,11 @@
               </div>
             </div>
             <div class="pkg-body">
-              <div class="pkg-loc">📍 Bali, Indonesia</div>
+              <div class="pkg-loc"><i class="fa-solid fa-location-dot"></i> Bali, Indonesia</div>
               <h3 class="pkg-name">Bali Paradise Escape</h3>
               <div class="pkg-meta">
-                <span>⏱ 7 Days</span><span>👥 2–6 People</span
-                ><span class="star">★</span><span>4.9</span>
+                <span><i class="fa-regular fa-clock"></i> 7 Days</span><span><i class="fa-solid fa-user-group"></i> 2–6 People</span
+                ><span class="star">  <i class="fa-solid fa-star"></i></span><span>4.9</span>
               </div>
               <p class="pkg-desc">
                 Lush rice terraces, ancient temples, and turquoise waves in this
@@ -2120,11 +2138,11 @@
               </div>
             </div>
             <div class="pkg-body">
-              <div class="pkg-loc">📍 Swiss Alps, Switzerland</div>
+              <div class="pkg-loc"><i class="fa-solid fa-location-dot"></i> Swiss Alps, Switzerland</div>
               <h3 class="pkg-name">Alpine Winter Wonderland</h3>
               <div class="pkg-meta">
-                <span>⏱ 10 Days</span><span>👥 2–4 People</span
-                ><span class="star">★</span><span>4.8</span>
+                <span><i class="fa-regular fa-clock"></i> 10 Days</span><span><i class="fa-solid fa-user-group"></i> 2–4 People</span
+                ><span class="star"><i class="fa-solid fa-star"></i></span><span>4.8</span>
               </div>
               <p class="pkg-desc">
                 Snow-capped peaks, cozy chalets, and world-class skiing in the
@@ -2155,11 +2173,11 @@
               </div>
             </div>
             <div class="pkg-body">
-              <div class="pkg-loc">📍 Paris, France</div>
+              <div class="pkg-loc"><i class="fa-solid fa-location-dot"></i> Paris, France</div>
               <h3 class="pkg-name">Parisian Romance Getaway</h3>
               <div class="pkg-meta">
-                <span>⏱ 6 Days</span><span>👥 2 People</span
-                ><span class="star">★</span><span>4.7</span>
+                <span><i class="fa-regular fa-clock"></i> 6 Days</span><span><i class="fa-solid fa-user-group"></i> 2 People</span
+                ><span class="star">  <i class="fa-solid fa-star"></i></span><span>4.7</span>
               </div>
               <p class="pkg-desc">
                 Art, cuisine, and timeless elegance in the city of lights and
@@ -2193,11 +2211,11 @@
               </div>
             </div>
             <div class="pkg-body">
-              <div class="pkg-loc">📍 Patagonia, Argentina</div>
+              <div class="pkg-loc"><i class="fa-solid fa-location-dot"></i> Patagonia, Argentina</div>
               <h3 class="pkg-name">Patagonia Trek Adventure</h3>
               <div class="pkg-meta">
-                <span>⏱ 14 Days</span><span>👥 4–10 People</span
-                ><span class="star">★</span><span>5.0</span>
+                <span><i class="fa-regular fa-clock"></i> 14 Days</span><span><i class="fa-solid fa-user-group"></i> 4–10 People</span
+                ><span class="star">  <i class="fa-solid fa-star"></i></span><span>5.0</span>
               </div>
               <p class="pkg-desc">
                 Glaciers, condors, and raw wilderness at the very end of the
@@ -2229,11 +2247,11 @@
               </div>
             </div>
             <div class="pkg-body">
-              <div class="pkg-loc">📍 Maldives</div>
+              <div class="pkg-loc"><i class="fa-solid fa-location-dot"></i> Maldives</div>
               <h3 class="pkg-name">Maldives Overwater Luxury</h3>
               <div class="pkg-meta">
-                <span>⏱ 8 Days</span><span>👥 2 People</span
-                ><span class="star">★</span><span>5.0</span>
+                <span><i class="fa-regular fa-clock"></i> 8 Days</span><span><i class="fa-solid fa-user-group"></i> 2 People</span
+                ><span class="star">  <i class="fa-solid fa-star"></i></span><span>5.0</span>
               </div>
               <p class="pkg-desc">
                 Crystal lagoons, overwater bungalows, and pristine coral reefs.
@@ -2264,11 +2282,11 @@
               </div>
             </div>
             <div class="pkg-body">
-              <div class="pkg-loc">📍 Tokyo, Japan</div>
+              <div class="pkg-loc"><i class="fa-solid fa-location-dot"></i> Tokyo, Japan</div>
               <h3 class="pkg-name">Tokyo Cultural Immersion</h3>
               <div class="pkg-meta">
-                <span>⏱ 9 Days</span><span>👥 2–8 People</span
-                ><span class="star">★</span><span>4.9</span>
+                <span><i class="fa-regular fa-clock"></i> 9 Days</span><span><i class="fa-solid fa-user-group"></i> 2–8 People</span
+                ><span class="star">  <i class="fa-solid fa-star"></i></span><span>4.9</span>
               </div>
               <p class="pkg-desc">
                 Neon nights, ancient shrines, and culinary wonders in Japan's
@@ -2563,7 +2581,7 @@
         <div class="testi-slider-wrap reveal">
           <div class="testi-track" id="testiTrack">
             <div class="testi-card">
-              <div class="testi-stars">★★★★★</div>
+              <div class="testi-stars">  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i></div>
               <div class="testi-q">✦ Bali Honeymoon ✦</div>
               <p class="testi-txt">
                 "Voyager made our Bali honeymoon an absolute dream. Every detail
@@ -2586,7 +2604,7 @@
             </div>
 
             <div class="testi-card">
-              <div class="testi-stars">★★★★★</div>
+              <div class="testi-stars">  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i></div>
               <div class="testi-q">✦ Patagonia Trek ✦</div>
               <p class="testi-txt">
                 "The Patagonia trek was one of the most transformative
@@ -2609,7 +2627,7 @@
             </div>
 
             <div class="testi-card">
-              <div class="testi-stars">★★★★★</div>
+              <div class="testi-stars">  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i></div>
               <div class="testi-q">✦ Solo Travel — Tokyo ✦</div>
               <p class="testi-txt">
                 "As a solo female traveler, safety was my top priority.
@@ -2632,7 +2650,7 @@
             </div>
 
             <div class="testi-card">
-              <div class="testi-stars">★★★★★</div>
+              <div class="testi-stars">  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i>  <i class="fa-solid fa-star"></i></div>
               <div class="testi-q">✦ Swiss Family Trip ✦</div>
               <p class="testi-txt">
                 "Five-star service from start to finish. Our family trip to
@@ -2913,16 +2931,16 @@
     <!-- ═══════════════ FLOATING BUTTONS ═══════════════ -->
     <div class="fabs">
       <a
-        href="https://wa.me/441234567890"
+        href="https://wa.me/4412345xxx"
         class="fab fab-wa"
         target="_blank"
         rel="noopener"
         title="WhatsApp"
       >
-        <span>&#9993;</span><span class="fab-tip">Chat on WhatsApp</span>
+        <span><i class="fa-brands fa-whatsapp"></i></span><span class="fab-tip">Chat on WhatsApp</span>
       </a>
-      <a href="tel:+441234567890" class="fab fab-call" title="Call Us">
-        <span>&#9742;</span><span class="fab-tip">Call Us Now</span>
+      <a href="tel:+4412345xxx" class="fab fab-call" title="Call Us">
+        <span><i class="fa-solid fa-phone"></i></span><span class="fab-tip">Call Us Now</span>
       </a>
       <button
         class="fab fab-top"
