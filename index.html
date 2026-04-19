@@ -301,7 +301,7 @@
         top: 0;
         left: 0;
         right: 0;
-        z-index: 800;
+        z-index: 500;
         padding: 22px 0;
         transition:
           background 0.4s,
@@ -409,6 +409,7 @@
 
       /* mobile nav */
       .nav-drawer {
+        padding: 120px 32px 40px;
         position: fixed;
         top: 0;
         right: -100%;
@@ -417,9 +418,9 @@
         background: var(--green);
         display: flex;
         flex-direction: column;
-        padding: 90px 32px 40px;
+        padding: 25px 32px 40px;
         gap: 8px;
-        z-index: 799;
+        z-index: 1000;
         transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: -12px 0 48px rgba(0, 0, 0, 0.3);
       }
@@ -438,8 +439,10 @@
       .drawer-overlay {
         position: fixed;
         inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 798;
+  background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(6px); /* 👈 premium effect */
+
+        z-index: 900;
         opacity: 0;
         visibility: hidden;
         transition:
